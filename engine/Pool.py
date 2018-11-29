@@ -19,16 +19,12 @@ class Pool:
     def __init__(self, diff=0):
         self.questions = []
         self.difficulty = diff
-        self.debug = False
+        self.debug = True
 
     def append(self, q=Question()):
         self.questions.append(q)
 
     def parse(self, lines=[]):
-        #print("\x1B[31msplitting lines\x1B[0m")
-        #lines = text.split("\n")
-        # print(lines[0][:7])
-        # print("lines recived by pool" + str(lines))
         if len(lines) > 0:
             if lines[0][:7] == "P START":
                 if self.debug:
@@ -38,17 +34,21 @@ class Pool:
                 for i in range(1, len(lines), 6):
                     if self.debug:
                         print("\x1B[31m" + lines[i][:-1] + "\x1B[0m")
-                    if len(lines[i]) > 0 and lines[i][0] == "Q":
-                        #q = ""
-                        #for j in range(6):
-                        #    print("\x1B[31mappending: " + lines[i + j] + "\x1B[0m")
-                        #    q += lines[i + j] + "\n"
+                    if lines[i][0] == "Q":
                         self.questions.append(Question())
-                        # print("\x1B[31mparsing question #" + str(len(self.questions) + 1) + "\x1B[0m")
-                        self.questions[-1].parse(lines[i:i + 6])
                         if self.debug:
-                            print(lines[i:i + 6])
+                            print("\x1B[35mlisting all questions:")
+                            self.dbgPrint()
+                            print("\x1B[31mparsing question #" + str(len(self.questions) + 1) + "\x1B[0m")
+                        end = i + 6
+                        q = lines[i:end]
+                        self.questions[-1].parse(q)
+                        if self.debug:
+                            print("\x1B[31m" + str(lines[i:i + 6]))
                             self.questions[-1].dbgPrint()
+                            print("\x1B[35mlist all questions:")
+                            self.dbgPrint()
+                            print("\x1B[0m")
                     else:
                         # TODO: Create exeption for invalid entry length
                         # Exeption stuff

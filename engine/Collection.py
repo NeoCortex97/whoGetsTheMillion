@@ -19,15 +19,19 @@ class Collection:
         for i in range(len(lines)):
             # print(lines[i][:5])
             if self.debug:
-                print("Testing line: ", lines[i][:-1])
+                print("Testing line: ", lines[i])
             if lines[i][:7] == "P START":
                 start = i
+                if self.debug:
+                    print("start of pool is: " + str(i))
             if lines[i][:5] == "P END":
+                if self.debug:
+                    print("parsing new pool")
                 self.pools.append(Pool())
                 p = lines[start:i]
                 if self.debug:
                     print(p)
-                self.pools[-1].parse(p)
+                self.pools[-1].parse(lines[start:i])
                 p.clear()
                 if self.debug:
                     print("lines passed to pool" + str(lines[start:i]))

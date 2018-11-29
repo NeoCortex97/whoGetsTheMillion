@@ -14,20 +14,20 @@ class Loader:
 
     def prepare(self):
         #self.lines.remove("\n")
-        self.lines = list(filter(lambda a: a != "\n", self.lines))
+        self.lines = list(filter(lambda a: a != "\n" and a != "" and a[0] != "#", self.lines))
         for line in self.lines:
-            if line[0] == "#":
-                self.lines.remove(line)
-                if self.debug:
-                    print("removed comment line: " + line)
+        #     if line[0] == "#":
+        #         self.lines.remove(line)
+        #         if self.debug:
+        #             print("removed comment line: " + line)
             if line[-1] == "\n":
                 self.lines[self.lines.index(line)] = line[:-1]
                 if self.debug:
                     print("removed newline")
-            if len(line) == 0:
-                self.lines.remove(line)
-                if self.debug:
-                    print("removed empty line")
+            #if len(line) == 0:
+            #    self.lines.remove(line)
+            #    if self.debug:
+            #        print("removed empty line")
 
     def getLines(self):
         return self.lines

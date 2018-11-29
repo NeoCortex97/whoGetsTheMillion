@@ -9,24 +9,24 @@ D 0 "Test 3"
 
 Q "Was tust du hier?"
 T test tun
-A 1 "Testen"
+A 2 "Testen"
 B 0 "nix"
 C 0 "alles kaputt"
 D 0 "sterben"
 
-Q "Hast du hobbies?"
-T test hobbies
-A 1 "Ja, viele"
-B 0 "Ja, ein paar"
-C 0 "Nicht wirklich."
-D 0 "Keine!"
+#Q "Hast du hobbies?"
+#T test hobbies
+#A 1 "Ja, viele"
+#B 0 "Ja, ein paar"
+#C 0 "Nicht wirklich."
+#D 0 "Keine!"
 
-Q "Verstehst du wieso das nicht funktioniert?"
-T test Funktion
-A 1 "JA"
-B 0 "Glaub schon"
-C 0 "Vielleicht"
-D 0 "Nope"
+#Q "Verstehst du wieso das nicht funktioniert?"
+#T test Funktion
+#A 1 "JA"
+#B 0 "Glaub schon"
+#C 0 "Vielleicht"
+#D 0 "Nope"
 
 P END
 P START 1
