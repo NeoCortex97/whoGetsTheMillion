@@ -80,6 +80,7 @@ class Question:
         if self.debug:
             print("This is in Question:")
             self.dbgPrint()
+        return self
 
     def toString(self):
         qline = "Q \"{0}\"".format(self.text)
@@ -117,8 +118,5 @@ class Question:
         if self.debug:
             print("Question.getQuestion:")
             self.dbgPrint()
-        return {"text": self.getText(),
-                "a": {"correct": self.answers[0].correct, "text": self.answers[0].text},
-                "b": {"correct": self.answers[1].correct, "text": self.answers[1].text},
-                "c": {"correct": self.answers[2].correct, "text": self.answers[2].text},
-                "d": {"correct": self.answers[3].correct, "text": self.answers[3].text}}
+        return {"text": self.text,
+                "a": self.answers[0].text}

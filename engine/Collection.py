@@ -4,7 +4,7 @@ from engine.Loader import Loader
 class Collection:
     def __init__(self, path = ""):
         self.pools = []
-        self.debug = True
+        self.debug = False
         if path != "":
             self.load(path)
 

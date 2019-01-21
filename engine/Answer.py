@@ -50,7 +50,6 @@ class Answer:
                 # TODO: create exeption for incorrect formatted answer strings
                 # Exeption stuff
                 pass
-
         else:
             if self.debug:
                 print("falsche zahl")
@@ -60,6 +59,7 @@ class Answer:
         if self.debug:
             print("This is in answer:")
             self.dbugPrint()
+        return self
 
     def decodeNumber(self, num=0):
         if self.debug:

@@ -35,14 +35,17 @@ class Pool:
                     if self.debug:
                         print("\x1B[31m" + lines[i][:-1] + "\x1B[0m")
                     if lines[i][0] == "Q":
-                        self.questions.append(Question())
+
+                        #q = Question()
+                        q = Question().parse(lines[i:i+6])
+                        self.questions.append(q)
                         if self.debug:
                             print("\x1B[35mlisting all questions:")
                             self.dbgPrint()
                             print("\x1B[31mparsing question #" + str(len(self.questions) + 1) + "\x1B[0m")
-                        end = i + 6
-                        q = lines[i:end]
-                        self.questions[-1].parse(q)
+                        #end = i + 6
+                        #ql = lines[i:end]
+                        #self.questions[-1].parse(q)
                         if self.debug:
                             print("\x1B[31m" + str(lines[i:i + 6]))
                             self.questions[-1].dbgPrint()
@@ -61,6 +64,7 @@ class Pool:
             # TODO: Exeption for empty list
             # Exeption stuff
             pass
+        print(len(self.questions))
 
     def toString(self):
         start = "P START {}\n\n".format(self.difficulty)
@@ -78,8 +82,9 @@ class Pool:
         return self.difficulty
 
     def getRandom(self):
+        print(self.questions)
         question = choice(self.questions)
         # print("The Pool object thinks the question is:")
-        # print(question)
+        print(choice(self.questions))
         # question.dbgPrint()
-        return question.getQuestion()
+        return question

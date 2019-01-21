@@ -1,0 +1,12 @@
+{
+  "fragen": [
+    {
+      "text": "Fragentext",
+      "a": "Antwort",
+      "b": "Bntwort",
+      "c": "Cntwort",
+      "d": "Dntwort",
+      "richtig": "abcd"
+    }
+  ]
+}
