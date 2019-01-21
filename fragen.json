@@ -7,6 +7,22 @@
       "c": "Cntwort",
       "d": "Dntwort",
       "richtig": "abcd"
+    },
+    {
+      "text": "Fragentext2",
+      "a": "Antwort2",
+      "b": "Bntwort2",
+      "c": "Cntwort2",
+      "d": "Dntwort2",
+      "richtig": "abcd"
+    },
+    {
+      "text": "Fragentext3",
+      "a": "Antwort3",
+      "b": "Bntwort3",
+      "c": "Cntwort3",
+      "d": "Dntwort3",
+      "richtig": "abcd"
     }
   ]
 }
